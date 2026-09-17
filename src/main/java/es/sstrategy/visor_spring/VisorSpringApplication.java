@@ -1,0 +1,13 @@
+package es.sstrategy.visor_spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class VisorSpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(VisorSpringApplication.class, args);
+	}
+
+}
