@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.sstrategy</groupId>
-	<artifactId>visor_spring</artifactId>
+	<artifactId>crud_spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>visor_spring</name>
+	<name>crud_spring</name>
 	<description/>
 	<url/>
 	<licenses>
