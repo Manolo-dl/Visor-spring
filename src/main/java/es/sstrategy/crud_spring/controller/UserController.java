@@ -3,6 +3,7 @@ package es.sstrategy.crud_spring.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +41,13 @@ public class UserController {
             .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/{email}")
+    @DeleteMapping("/{email}")
     public ResponseEntity<Void> borrarUsuario(@PathVariable String email) {
-        userRepository.deleteByEmail(email);
-        return ResponseEntity.noContent().build();
+        return userRepository.findByEmail(email)
+        .map(usuario -> {
+            userRepository.deleteById(usuario.getId());
+            return ResponseEntity.noContent().<Void>build();
+        })
+        .orElse(ResponseEntity.notFound().build());
     }
 }
